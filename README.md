@@ -3,7 +3,7 @@
 This U-Boot supports three flash layouts:  
 - Stock UBI layout 64 MB  
 - Expanded UBI partition layout 112 MB  
-- Maximum U-BI partition layout 114 MB  
+- Maximum UBI partition layout 114 MB  
 
 The U-Boot web page has been beautified, leaving behind the factory's single-function and crude interface.  
 It supports booting and flashing stock firmware; after flashing this U-Boot the stock firmware can still be started directly.
@@ -20,9 +20,10 @@ If the U-Boot web page looks abnormal, clear the browser cache and re-enter.
 ## Flash U-Boot
 1. Extract the downloaded archive, enter the router’s management interface, import the extracted "backup.file" configuration file, and wait for the router to restore the configuration successfully.  
 2. Open an SSH client (MobaXterm for example), username root, no password, log in to the router via SSH, drag the U-Boot file mt7981_comfast_cf-wr632ax-fip-fixed-parts-multi-layout.bin into the router’s /tmp folder.  
-3. Type the following command and press Enter; if the output looks like the picture, the U-Boot has been flashed successfully. After flashing, power off and enter U-Boot again by the method above.  
-mtd write /tmp/mt7981_comfast_cf-wr632ax-fip-fixed-parts-multi-layout.bin FIP
-
+3. Type the following command and press Enter; if the output looks like the picture, the U-Boot has been flashed successfully. After flashing, power off and enter U-Boot again by the method above.
+4. ```bash
+   mtd write /tmp/mt7981_comfast_cf-wr632ax-fip-fixed-parts-multi-layout.bin FIP
+   ```
 
 ## Flash back to stock
 Enter U-Boot, select the default stock partition layout, choose the stock firmware file downloaded from COMFAST’s official site, upload and flash it; the device will return to stock while keeping this U-Boot.
